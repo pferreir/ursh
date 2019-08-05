@@ -35,10 +35,12 @@ setup(
     packages=find_packages(),
     install_requires=get_requirements(),
     setup_requires=[] + pytest_runner,
-    tests_require=[
-        'pytest',
-    ],
     entry_points={
         'console_scripts': {'ursh = ursh.cli.core:cli'}
-    }
+    },
+    extras_require={
+        'tests': [
+            'pytest'
+        ]
+    },
 )
